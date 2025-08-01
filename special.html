@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>特殊计时</title>
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="manifest" href="manifest.json">
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js');
+    }
+  </script>
+</head>
+<body>
+  <h1>特殊计时</h1>
+  <div class="clock">当前时间：<span id="currentTime"></span></div>
+  <div class="timer">
+    <button onclick="startSpecialTimer()">开始</button>
+    <button onclick="resetSpecial()">确认重置</button>
+    <p id="specialDisplay"></p>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

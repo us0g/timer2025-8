@@ -1,0 +1,22 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 30px;
+  background-color: #f0f8ff;
+}
+h1 {
+  font-size: 2em;
+  color: #333;
+}
+.clock {
+  margin-bottom: 20px;
+  font-size: 1.2em;
+}
+.timer {
+  margin-top: 20px;
+}
+.quick-buttons button, input[type="number"], button {
+  margin: 5px;
+  padding: 10px 15px;
+  font-size: 1em;
+}

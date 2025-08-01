@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>倒计时</title>
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="manifest" href="manifest.json">
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js');
+    }
+  </script>
+</head>
+<body>
+  <h1>倒计时</h1>
+  <div class="clock">当前时间：<span id="currentTime"></span></div>
+  <div class="timer">
+    <input type="number" id="customTime" placeholder="输入秒数" min="1">
+    <button onclick="startCountdown(customTime.value)">开始</button>
+    <div class="quick-buttons">
+      <button onclick="startCountdown(5)">5秒</button>
+      <button onclick="startCountdown(10)">10秒</button>
+      <button onclick="startCountdown(15)">15秒</button>
+      <button onclick="startCountdown(20)">20秒</button>
+    </div>
+    <p id="countdownDisplay"></p>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
