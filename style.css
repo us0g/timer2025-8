@@ -1,22 +1,40 @@
 body {
   font-family: Arial, sans-serif;
   text-align: center;
-  padding: 30px;
+  padding: 20px;
+  margin: 0;
   background-color: #f0f8ff;
 }
-h1 {
-  font-size: 2em;
-  color: #333;
+
+html, body {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
 }
+
+h1 {
+  font-size: 2.5em;
+  color: #333;
+  margin-top: 10px;
+}
+
 .clock {
   margin-bottom: 20px;
-  font-size: 1.2em;
+  font-size: 1.5em;
 }
+
 .timer {
   margin-top: 20px;
 }
+
 .quick-buttons button, input[type="number"], button {
-  margin: 5px;
-  padding: 10px 15px;
-  font-size: 1em;
+  margin: 10px;
+  padding: 12px 20px;
+  font-size: 1.2em;
+}
+
+#countdownDisplay, #specialDisplay {
+  font-size: 2em;
+  margin-top: 20px;
+  color: red;
 }

@@ -1,4 +1,4 @@
-let countdownInterval, specialInterval, elapsed = 0;
+let countdownInterval, specialInterval, beepInterval, elapsed = 0;
 const countdownDisplay = document.getElementById('countdownDisplay');
 const specialDisplay = document.getElementById('specialDisplay');
 
@@ -13,6 +13,7 @@ updateTime();
 
 function startCountdown(seconds) {
   clearInterval(countdownInterval);
+  clearInterval(beepInterval);
   seconds = parseInt(seconds);
   if (!seconds || seconds <= 0) return;
   countdownDisplay.textContent = `剩余时间：${seconds}秒`;
@@ -22,9 +23,15 @@ function startCountdown(seconds) {
     if (seconds <= 0) {
       clearInterval(countdownInterval);
       countdownDisplay.textContent = "时间到！";
-      playBeep();
+      startBeeping();
     }
   }, 1000);
+}
+
+function resetCountdown() {
+  clearInterval(countdownInterval);
+  clearInterval(beepInterval);
+  countdownDisplay.textContent = "已重置";
 }
 
 function startSpecialTimer() {
@@ -57,4 +64,9 @@ function speak(text) {
 function playBeep() {
   const beep = new Audio("data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAIlYAAESsAAACABAAZGF0YQAAAAA=");
   beep.play();
+}
+
+function startBeeping() {
+  playBeep();
+  beepInterval = setInterval(playBeep, 2000); // 每2秒响一次
 }

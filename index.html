@@ -4,7 +4,6 @@
   <meta charset="utf-8">
   <title>倒计时</title>
   <link rel="stylesheet" href="style.css">
-
   <link rel="manifest" href="manifest.json">
   <script>
     if ('serviceWorker' in navigator) {
@@ -18,6 +17,7 @@
   <div class="timer">
     <input type="number" id="customTime" placeholder="输入秒数" min="1">
     <button onclick="startCountdown(customTime.value)">开始</button>
+    <button onclick="resetCountdown()">重置</button>
     <div class="quick-buttons">
       <button onclick="startCountdown(5)">5秒</button>
       <button onclick="startCountdown(10)">10秒</button>
